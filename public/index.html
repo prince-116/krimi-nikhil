@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.png?v=4" type="image/png" />
+
+    <meta name="author" content="Zareqia" />
+    <meta
+      name="keywords"
+      content="digital invitation webpage, online invitation maker, wedding invitation webpage, engagement invitation, birthday invitation, anniversary invitation, baby shower invitation, housewarming invitation, party invitation online"
+    />
+    <meta name="facebook-domain-verification" content="4mfc6mdjj4a26kv9rkv7dq5cczp287" />
+
+    <style>
+      html, body, #root {
+        background-color: #0f0f0f !important;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+      }
+      body {
+        background-color: #0f0f0f !important;
+      }
+    </style>
+    <!-- krimi-nikhil: the site is just this invitation.
+         The home page (/) boots the bundled app against its internal
+         /invite/demo route, then restores the visible URL to "/" once mounted.
+         In-app navigation to any other route bounces back home. Static files
+         are unaffected. See README. -->
+    <script>
+      (function () {
+        var ROUTE = "/invite/demo?template=royal-prestige";
+        var ps = history.pushState, rs = history.replaceState;
+        var FILE_RE = /\.[a-z0-9]+$/i;
+
+        function clean() {
+          if (location.pathname !== "/" || location.search !== "") {
+            rs.call(history, null, "", "/");
+          }
+        }
+        // restore the clean home URL once the app has mounted
+        document.addEventListener("DOMContentLoaded", function () { setTimeout(clean, 300); });
+        window.addEventListener("load", function () { setTimeout(clean, 150); });
+        setTimeout(clean, 2000);
+
+        if (location.pathname === "/") {
+          // the router needs to see its demo route...
+          rs.call(history, null, "", ROUTE);
+        } else if (location.pathname !== "/invite/demo" && !FILE_RE.test(location.pathname)) {
+          location.replace("/");
+        }
+
+        function gate() {
+          var p = location.pathname;
+          if (p === "/") return;                                       // home
+          if (p === "/invite/demo") { setTimeout(clean, 250); return; } // internal route -> hide it
+          if (FILE_RE.test(p)) return;                                 // static file
+          location.replace("/");                                       // everything else -> home
+        }
+
+        history.pushState = function () { ps.apply(this, arguments); gate(); };
+        history.replaceState = function () { rs.apply(this, arguments); gate(); };
+        window.addEventListener("popstate", gate);
+      })();
+    </script>
+
+    <!-- static-data shim: answers the app's Supabase demo-data and translation
+         calls straight from /mock-data/*.json, so the site works on any static
+         host (Cloudflare etc.) with no server and no localhost wiring. Every
+         other request passes through untouched. server.mjs (local dev) still
+         serves the same files from the same place. -->
+    <script>
+      (function () {
+        var rawFetch = window.fetch.bind(window);
+        var demoPromise = null, dictPromise = null;
+        function loadJson(path) {
+          return rawFetch(path).then(function (r) { return r.json(); });
+        }
+        function demoData() { return demoPromise || (demoPromise = loadJson("/mock-data/demo_templates.json")); }
+        function guDict() { return dictPromise || (dictPromise = loadJson("/mock-data/translations-gu.json")); }
+        function reply(body) {
+          return Promise.resolve(new Response(JSON.stringify(body), {
+            status: 200,
+            headers: { "content-type": "application/json" }
+          }));
+        }
+        function urlOf(input) {
+          if (typeof input === "string") return input;
+          if (input && input.url) return input.url;
+          return String(input);
+        }
+        function methodOf(input, init) {
+          return ((init && init.method) || (input && input.method) || "GET").toUpperCase();
+        }
+        function bodyOf(input, init) {
+          if (init && typeof init.body === "string") return Promise.resolve(init.body);
+          if (input && typeof input.clone === "function") return input.clone().text();
+          return Promise.resolve("");
+        }
+        window.fetch = function (input, init) {
+          var url = urlOf(input);
+          var method = methodOf(input, init);
+          if (method === "POST" && url.indexOf("/rest/v1/rpc/get_template_demo_data") !== -1) {
+            return bodyOf(input, init).then(function (raw) {
+              var args = {}; try { args = JSON.parse(raw || "{}"); } catch (e) {}
+              return demoData().then(function (all) {
+                var row = all[args.p_template_id || args.p_template_slug || ""];
+                return reply(row ? [row] : []);
+              });
+            });
+          }
+          if (method === "POST" && url.indexOf("/functions/v1/translate-content") !== -1) {
+            return bodyOf(input, init).then(function (raw) {
+              var args = {}; try { args = JSON.parse(raw || "{}"); } catch (e) {}
+              var dict = args.targetLanguage === "gu" ? guDict() : Promise.resolve({});
+              return dict.then(function (d) {
+                var out = {}, texts = args.texts || {};
+                Object.keys(texts).forEach(function (k) {
+                  var v = texts[k];
+                  out[k] = (typeof v === "string" && d[v]) ? d[v] : v;
+                });
+                return reply({ translations: out });
+              });
+            });
+          }
+          if (method === "GET" && url.indexOf("/rest/v1/") !== -1) return reply([]);
+          return rawFetch(input, init);
+        };
+      })();
+    </script>
+
+    <script type="module" crossorigin src="/assets/index-C_lsUyl3.js?v=3"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-2HSI-wKY.css?v=3" />
+
+    <title>Krimi ❤ Nikhil — Wedding Invitation</title>
+    <meta name="description" content="Krimi weds Nikhil — a digital wedding invitation." />
+    <link rel="canonical" href="https://zareqia.com/invite/demo" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Zareqia" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Krimi ❤ Nikhil — Wedding Invitation" />
+    <meta property="og:description" content="Krimi weds Nikhil — a digital wedding invitation." />
+    <meta property="og:url" content="https://zareqia.com/invite/demo" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Krimi ❤ Nikhil — Wedding Invitation" />
+    <meta name="twitter:description" content="Krimi weds Nikhil — a digital wedding invitation." />
+    <meta name="twitter:url" content="https://zareqia.com/invite/demo" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

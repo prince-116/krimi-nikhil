@@ -1,0 +1,11 @@
+{
+  "name": "krimi-nikhil",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Krimi & Nikhil reception invitation — single-template local build (royal-prestige, from the zareqia mirror)",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node server.mjs"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "royal-prestige": {
+    "invitation_id": "c9f88d57-9adb-4245-81e1-50770d160a05",
+    "data": {
+      "message": "We are honored to welcome you to\nthe Wedding ceremony of..",
+      "showGift": true,
+      "timezone": "Asia/Kolkata",
+      "brideName": "Zara",
+      "groomName": "Veer",
+      "venueName": "The Taj Mahal Palace",
+      "dayProgram": [
+        {
+          "name": "Guest Arrival",
+          "dateTime": "2026-06-30T10:00",
+          "description": "We Warmly welcome you.. ! "
+        },
+        {
+          "name": "Wedding Ceremony",
+          "dateTime": "2026-06-30T10:30",
+          "description": "Your gracious presence is requested ❤"
+        },
+        {
+          "name": "Reception",
+          "dateTime": "2026-07-02T19:30",
+          "description": "Your gracious presence is requested at the Reception at 7:30 PM onwards."
+        }
+      ],
+      "endMessage": "We can't wait to celebrate with you!",
+      "musicTrack": "track3",
+      "giftMessage": "Your love, blessings, and presence are the greatest gifts we could ever ask for.",
+      "messageFont": "italianno",
+      "messageSize": 24,
+      "showWelcome": true,
+      "weddingDate": "2026-09-30",
+      "weddingTime": "10:00",
+      "brideSubText": "Daughter of Mr. & Mrs. Pathan\nB.Tech, MBA\nAdvocate, High Court",
+      "dressCodeMen": "Suit or traditional formal wear",
+      "groomSubText": "Son of Mr. & Mrs. Khan\nM.Tech, Phd\nSoftware Engineer",
+      "messageColor": "",
+      "musicEnabled": true,
+      "venueAddress": "Apollo Bandar, Colaba, Mumbai, Maharashtra 400001",
+      "accommodation": "Special rates at The Taj Mahal Palace (5 min from venue). Use code WEDDING2026 when booking.",
+      "showDressCode": true,
+      "showSlideshow": true,
+      "customMusicUrl": "https://pub-6fec5e6cad894ad0babaa0c62c8e370b.r2.dev/uploads/1778406077900-RotaryPhone.mp3",
+      "dressCodeWomen": "Elegant formal attire in pastel or jewel tones",
+      "googleMapsLink": "https://maps.app.goo.gl/kZ6XewtUQm75dQJf9",
+      "showDayProgram": true,
+      "showEndMessage": true,
+      "showPreWedding": true,
+      "transportation": "Shuttle service will be available from the city center to the venue. Pickup point: Central Station at 3:30 PM.",
+      "useCustomMusic": false,
+      "welcomeMessage": "We are honored to welcome you to the Wedding ceremony of Veer & Zara As they begin their journey together in faith and love,\nwe thank you for being part of this blessed occasion ❤",
+      "backgroundImage": "/backgrounds/bg1.jpg",
+      "coupleNamesFont": "greatvibes",
+      "coupleNamesSize": 0,
+      "slideshowImages": [],
+      "coupleNamesColor": "",
+      "preWeddingEvents": [
+        {
+          "name": "Mahendi",
+          "dateTime": "2026-06-27T21:30",
+          "description": "At Bride's House"
+        },
+        {
+          "name": "Haldi",
+          "dateTime": "2026-06-28T20:30",
+          "description": "At Groom's House"
+        },
+        {
+          "name": "Sangeet",
+          "dateTime": "2026-06-29T21:00",
+          "description": "At The Taj Mahal Palace"
+        }
+      ],
+      "coupleSubTextFont": "cormorant",
+      "coupleSubTextSize": 16,
+      "showAccommodation": true,
+      "coupleSubTextColor": "#ffffff",
+      "showGuestMessaging": true,
+      "showTransportation": true,
+      "translationEnabled": true,
+      "showBackgroundImage": true,
+      "translationLanguage": "ur"
+    },
+    "template_id": "royal-prestige"
+  }
+}
