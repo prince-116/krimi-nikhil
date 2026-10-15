@@ -27,6 +27,12 @@ Open **http://localhost:5399** — `/` redirects straight to the invitation
 - Opening line and welcome text say "Reception" instead of "Wedding ceremony" —
   in English and Gujarati — and `Reception → સ્વાગત સમારંભ` was added to the
   dictionary.
+- Same changes as krimi-wedding's latest round: the **elder blessings section**
+  (identical `blessingText` and dictionary entries — rendered as the first content
+  section, under the cover/welcome line) and the **name order** (the app renders the
+  `groomName` slot first, so Krimi — with her parentage in `groomSubText` — sits in
+  it and the invite reads "Krimi & Nikhil"). The timeline is unchanged from the
+  reception-only build.
 - Default port **5399** (krimi-wedding runs 5299) so both can run side by side.
 - Everything else — design, bundle, media, fonts, favicon, shim, gating,
   backups — is inherited from krimi-wedding; see its README for the full history
