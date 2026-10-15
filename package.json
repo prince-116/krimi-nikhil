@@ -6,6 +6,8 @@
   "description": "Krimi & Nikhil reception invitation — single-template local build (royal-prestige, from the zareqia mirror)",
   "scripts": {
     "start": "node server.mjs",
-    "dev": "node server.mjs"
+    "dev": "node server.mjs",
+    "deploy": "wrangler deploy",
+    "dev-prod": "wrangler dev"
   }
 }
