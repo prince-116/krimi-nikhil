@@ -1,9 +1,9 @@
 # Krimi Nikhil — royal-prestige (reception)
 
-Reception invitation for Krimi & Nikhil — a copy of `../krimi-wedding` scoped to one
-function: the **Reception, 7:00 PM onward, at Rani Sati Bhawan Hall** (the only
-venue shown). Same design, bundle, static-data shim and routing gates as
-krimi-wedding.
+Reception-variant invitation for Krimi & Nikhil — a copy of `../krimi-wedding` scoped
+to one function: the **Wedding and Reception, 7:00 PM onward, at Rani Sati Bhawan
+Hall** (the only venue shown). Same design, bundle, static-data shim and routing
+gates as krimi-wedding.
 
 ```bash
 node server.mjs       # or: npm start
@@ -15,18 +15,18 @@ Open **http://localhost:5399** — `/` redirects straight to the invitation
 
 ## Differences from krimi-wedding
 
-- Program Timeline has one entry: **Reception — Friday, Nov 20, 2026, 7:00 PM —
-  Rani Sati Bhawan Hall** (`dayProgram` trimmed to it; pre-wedding events removed
-  from the mock data).
+- Program Timeline has one entry: **Wedding and Reception — Friday, Nov 20, 2026,
+  7:00 PM — Rani Sati Bhawan Hall** (`dayProgram` trimmed to it; pre-wedding events
+  removed from the mock data).
 - Venue section shows only the hall: the house block (Samrat Nagar) and the
   "View Home on Google Maps" button are off (empty `receptionVenue*` fields in
   `public/mock-data/demo_templates.json`) — the merged venue layout itself is
   untouched.
 - Countdown, hero card and the Save-the-Date calendar entry point at **7:00 PM**
   (`weddingTime: "19:00"`).
-- Opening line and welcome text say "Reception" instead of "Wedding ceremony" —
-  in English and Gujarati — and `Reception → સ્વાગત સમારંભ` was added to the
-  dictionary.
+- Opening line, welcome text and the timeline entry say "Wedding and Reception"
+  (Gujarati: લગ્ન અને સ્વાગત સમારંભ) instead of "Reception"; the gu dictionary has
+  both the renamed strings and the original "Reception" mapping.
 - Same changes as krimi-wedding's latest round: the **elder blessings section**
   (identical `blessingText` and dictionary entries — rendered as the first content
   section, under the cover/welcome line) and the **name order** (the app renders the

@@ -2,7 +2,7 @@
   "royal-prestige": {
     "invitation_id": "c9f88d57-9adb-4245-81e1-50770d160a05",
     "data": {
-      "message": "We are honored to welcome you to\nthe Reception of..",
+      "message": "We are honored to welcome you to\nthe Wedding and Reception of..",
       "showGift": true,
       "timezone": "Asia/Kolkata",
       "brideName": "Nikhil",
@@ -10,7 +10,7 @@
       "venueName": "Rani Sati Bhawan Hall",
       "dayProgram": [
         {
-          "name": "Reception",
+          "name": "Wedding and Reception",
           "dateTime": "2026-11-20T19:00",
           "description": "Rani Sati Bhawan Hall"
         }
@@ -40,7 +40,7 @@
       "showPreWedding": false,
       "transportation": "Shuttle service will be available from the city center to the venue. Pickup point: Central Station at 3:30 PM.",
       "useCustomMusic": false,
-      "welcomeMessage": "We are honored to welcome you to the Reception of Krimi & Nikhil As they begin their journey together in faith and love,\nwe thank you for being part of this blessed occasion ❤",
+      "welcomeMessage": "We are honored to welcome you to the Wedding and Reception of Krimi & Nikhil As they begin their journey together in faith and love,\nwe thank you for being part of this blessed occasion ❤",
       "blessingText": "With the divine blessings of Late Sobrajmal Chandumal Girgilani & Sitaben Sobrajmal Girgilani",
       "backgroundImage": "/backgrounds/bg1.jpg",
       "coupleNamesFont": "greatvibes",
